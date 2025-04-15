@@ -1,10 +1,60 @@
 /*
-   Theme Name: erdrin theme
-   Theme URI: http://digitalschool.tech
-   Author: erdrin demi
-   Author URI: http://digitalschool.tech
-   Description: jfsfhsjkfhkfshfjkskfh
-   Version: 2.5
-   Tags: colorful, custom, responsive, design
-   Text Domain: erdrin-theme
+/*
+ Theme Name:   Auto
+ Theme URI:    https://digitialschool.tech
+ Author:       erdrindemi
+ Author URI:   https://digitalschool.tech
+ Description:  Custom theme for Auto car painting business
+ Version:      1.0
+ License:      GNU General Public License v2 or later
+ Text Domain:  auto
 */
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+}
+
+header {
+   background-color: #333;
+   color: white;
+   text-align: center;
+   padding: 1em 0;
+}
+
+header h1 {
+   margin: 0;
+}
+
+nav {
+   background-color: #444;
+   padding: 1em;
+}
+
+nav a {
+   color: white;
+   margin: 0 1em;
+   text-decoration: none;
+}
+
+nav a:hover {
+   text-decoration: underline;
+}
+
+.container {
+   width: 80%;
+   margin: 0 auto;
+   padding: 2em 0;
+}
+
+footer {
+   background-color: #333;
+   color: white;
+   text-align: center;
+   padding: 1em 0;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
