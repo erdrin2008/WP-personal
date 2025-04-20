@@ -1,0 +1,91 @@
+<?php
+
+$automobile_hub_tp_theme_css = '';
+
+$automobile_hub_tp_color_option = get_theme_mod('automobile_hub_tp_color_option');
+
+// 1st color
+$automobile_hub_tp_color_option = get_theme_mod('automobile_hub_tp_color_option', '#f5b900');
+if ($automobile_hub_tp_color_option) {
+    $automobile_hub_tp_theme_css .= ':root {';
+    $automobile_hub_tp_theme_css .= '--color-primary1: ' . esc_attr($automobile_hub_tp_color_option) . ';';
+    $automobile_hub_tp_theme_css .= '}';
+}
+
+//======================= slider Content layout ===================== //
+
+$car_paint_job_slider_content_layout = get_theme_mod('car_paint_job_slider_content_layout', 'CENTER-ALIGN'); 
+$automobile_hub_tp_theme_css .= '#slider .carousel-caption{';
+switch ($car_paint_job_slider_content_layout) {
+    case 'LEFT-ALIGN':
+        $automobile_hub_tp_theme_css .= 'text-align:left; right: 40%; left: 15%';
+        break;
+    case 'CENTER-ALIGN':
+        $automobile_hub_tp_theme_css .= 'text-align:center; left: 20%; right: 20%';
+        break;
+    case 'RIGHT-ALIGN':
+        $automobile_hub_tp_theme_css .= 'text-align:right; left: 40%; right: 15%';
+        break;
+    default:
+        $automobile_hub_tp_theme_css .= 'text-align:left; right: 40%; left: 15%';
+        break;
+}
+$automobile_hub_tp_theme_css .= '}';
+
+//Font Weight
+$automobile_hub_menu_font_weight = get_theme_mod( 'automobile_hub_menu_font_weight','400');
+if($automobile_hub_menu_font_weight == '100'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 100;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '200'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 200;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '300'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 300;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '400'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 400;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '500'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 500;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '600'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 600;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '700'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 700;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '800'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 800;';
+$automobile_hub_tp_theme_css .='}';
+}else if($automobile_hub_menu_font_weight == '900'){
+$automobile_hub_tp_theme_css .='.main-navigation a{';
+    $automobile_hub_tp_theme_css .='font-weight: 900;';
+$automobile_hub_tp_theme_css .='}';
+}
+
+//header
+$automobile_hub_slider_arrows = get_theme_mod( 'automobile_hub_slider_arrows');
+if($automobile_hub_slider_arrows != true){
+$automobile_hub_tp_theme_css .='.page-template-front-page .headerbox{';
+    $automobile_hub_tp_theme_css .='position:static; background: #151515;
+}';
+$automobile_hub_tp_theme_css .='}';
+}
+
+// logo tagline color
+$automobile_hub_site_tagline_color = get_theme_mod('automobile_hub_site_tagline_color');
+
+if($automobile_hub_site_tagline_color != false){
+$automobile_hub_tp_theme_css .='.logo h1 a, .logo p.site-title a{';
+$automobile_hub_tp_theme_css .='color: '.esc_attr($automobile_hub_site_tagline_color).'!important;';
+$automobile_hub_tp_theme_css .='}';
+}

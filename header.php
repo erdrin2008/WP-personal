@@ -1,21 +1,43 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme
+ *
+ * @package Car Paint Job
+ * @subpackage car_paint_job
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-  <meta charset="<?php bloginfo('charset'); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width">
   <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-  <header class="header">
-    <div class="logo">
-      <?php the_custom_logo(); ?>
-    </div>
-    <nav class="nav-menu">
-      <?php
-        wp_nav_menu([
-          'theme_location' => 'primary',
-          'menu_class' => 'primary-menu',
-        ]);
-      ?>
-    </nav>
-  </header>
+
+<?php if ( function_exists( 'wp_body_open' ) )
+	{
+		wp_body_open();
+	}else{
+		do_action('wp_body_open');
+	}
+?>
+
+<?php if(get_theme_mod('automobile_hub_preloader_show_hide','') != ''){ ?>
+	<div class="loader">
+		<div class="center center1">
+		    <div class="ring"></div>
+		</div>
+		<div class="center center2">
+		    <div class="ring"></div>
+		</div>
+	</div>
+<?php }?>
+
+<header role="banner">
+	<a class="screen-reader-text skip-link" href="#tp_content"><?php esc_html_e( 'Skip to content', 'car-paint-job' ); ?></a>
+	<?php
+	  get_template_part( 'template-parts/header/site', 'branding' );
+	?>
+</header>
