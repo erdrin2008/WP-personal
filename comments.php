@@ -1,77 +1,54 @@
 <?php
 /**
- * The template for displaying comments
+ * The template for displaying Comments.
  *
- * @package Car Paint Job
- * @subpackage car_paint_job
+ * The area of the page that contains both current comments
+ * and the comment form.  The actual display of comments is
+ * handled by a callback to bravada_comment() which is
+ * located in the includes/theme-comments.php file.
+ *
+ * @package Bravada
  */
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
 if ( post_password_required() ) {
 	return;
 }
 ?>
+<section id="comments">
+	<?php if ( have_comments() ) : ?>
 
-<div id="comments" class="comments-area">
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-			$automobile_hub_comments_number = get_comments_number();
-			if ( '1' === $automobile_hub_comments_number ) {
-				/* translators: %s: post title */
-				printf(
-					esc_html__( 'One Reply to &ldquo;%s&rdquo;', 'car-paint-job' ),
-					'<span>' . esc_html( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf(
-					/* translators: 1: number of comments, 2: post title */
-					esc_html(
-						_nx(
-							'%1$s Reply to &ldquo;%2$s&rdquo;',
-							'%1$s Replies to &ldquo;%2$s&rdquo;',
-							$automobile_hub_comments_number,
-							'comments title',
-							'car-paint-job'
-						)
-					),
-					number_format_i18n( $automobile_hub_comments_number ), // already safe integer
-					'<span>' . esc_html( get_the_title() ) . '</span>'
-				);
-			}
-			?>
+		<h2 id="comments-title">
+			<span>
+				<?php if ( 1 === absint( get_comments_number() ) ) {
+					esc_html_e( 'One comment', 'bravada' );
+				} else {
+					printf( _n( '%1$s Comment', '%1$s Comments', absint( get_comments_number() ), 'bravada' ),
+					number_format_i18n( get_comments_number() ));
+				} ?>
+			</span>
 		</h2>
 
-		<ol class="comment-list">
+		<ol class="commentlist">
 			<?php
-				wp_list_comments( array(
-					'avatar_size' => 100,
-					'style'       => 'ol',
-					'short_ping'  => true,					
-				) );
+			wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 50,
+				'callback' => 'bravada_comment',
+			) );
 			?>
-		</ol>
+		</ol><!-- .commentlist -->
 
-		<?php the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'car-paint-job' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'car-paint-job' ) . '</span>',
-		) );
+		<?php if ( function_exists( 'the_comments_navigation' ) ) the_comments_navigation(); ?>
 
-	endif; // Check for have_comments().
+	<?php endif; // Check for have_comments(). ?>
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'car-paint-job' ); ?></p>
 	<?php
-	endif;
-
-	comment_form();
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-</div>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'bravada' ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( comments_open() ) comment_form();  ?>
+</section><!-- #comments -->
