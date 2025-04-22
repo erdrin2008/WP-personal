@@ -28,17 +28,17 @@
 
 					<div id="header-menu" <?php cryout_schema_microdata( 'menu' ); ?>>
 						<?php cryout_topmenu_hook(); ?>
-					</div><!-- #header-menu -->
+					</div>
 
-				</div><!-- #site-header-inside -->
+				</div>
 
-			</div><!--.site-header-top-->
+			</div>
 
 			<?php if ( has_nav_menu( 'primary' ) || ( true == cryout_get_option('theme_pagesmenu') ) ) { ?>
 			<nav id="mobile-menu" tabindex="-1">
 				<?php cryout_mobilemenu_hook(); ?>
 				<?php do_action( 'cryout_side_section_hook' ); ?>
-			</nav> <!-- #mobile-menu -->
+			</nav> 
 			<?php } ?>
 
 			<div class="site-header-bottom">
@@ -49,7 +49,7 @@
 
 						<div id="branding">
 							<?php cryout_branding_hook(); ?>
-						</div><!-- #branding -->
+						</div>
 
 						<?php if ( bravada_check_empty_menu( 'primary' ) && ( has_nav_menu( 'primary' ) || ( true == cryout_get_option('theme_pagesmenu') ) ) ) { ?>
 						<div class='menu-burger'>
@@ -64,24 +64,24 @@
 						<?php if ( bravada_check_empty_menu( 'top' ) && ( has_nav_menu( 'top' ) || ( true == cryout_get_option('theme_pagesmenu') ) ) ) { ?>
 						<nav id="<?php echo apply_filters('bravada_navigation_compat', 'access') ?>" aria-label="<?php esc_attr_e( 'Top Menu', 'bravada' ) ?>" <?php cryout_schema_microdata( 'menu' ); ?>>
 							<?php cryout_access_hook(); ?>
-						</nav><!-- #access -->
+						</nav>
 						<?php } ?>
 
-					</div><!-- #site-header-inside -->
+					</div>
 
-				</div><!-- #site-header-bottom-fixed -->
+				</div>
 
-			</div><!--.site-header-bottom-->
+			</div>
 
-		</div><!-- #site-header-main -->
+		</div>
 
 		<div id="header-image-main">
 			<div id="header-image-main-inside">
 				<?php cryout_headerimage_hook(); ?>
-			</div><!-- #header-image-main-inside -->
-		</div><!-- #header-image-main -->
+			</div>
+		</div>
 
-	</header><!-- #masthead -->
+	</header>
 
 	<?php cryout_absolute_top_hook(); ?>
 

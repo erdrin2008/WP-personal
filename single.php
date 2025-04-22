@@ -17,12 +17,12 @@ get_header(); ?>
 					<header>
 						<div class="entry-meta beforetitle-meta">
 							<?php cryout_post_title_hook(); ?>
-						</div><!-- .entry-meta -->
+						</div>
 						<?php the_title( '<h1 class="entry-title singular-title" ' . cryout_schema_microdata('entry-title', 0) . '>', '</h1>' ); ?>
 
 						<div class="entry-meta aftertitle-meta">
 							<?php cryout_post_meta_hook(); ?>
-						</div><!-- .entry-meta -->
+						</div>
 
 					</header>
 
@@ -31,18 +31,18 @@ get_header(); ?>
 					<div class="entry-content" <?php cryout_schema_microdata('entry-content'); ?>>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'bravada' ), 'after' => '</span></div>' ) ); ?>
-					</div><!-- .entry-content -->
+					</div>
 
 					<footer class="entry-meta entry-utility">
 						<?php cryout_post_utility_hook(); ?>
-					</footer><!-- .entry-utility -->
+					</footer>
 
-				</div><!-- .article-inner -->
+				</div>
 				<?php cryout_singular_after_inner_hook();  ?>
-			</article><!-- #post-## -->
+			</article>
 
 			<?php if ( get_the_author_meta( 'description' ) ) {
-					// If a user has filled out their description, show a bio on their entries
+				
 					get_template_part( 'content/user-bio' );
 			} ?>
 
@@ -51,13 +51,13 @@ get_header(); ?>
 			<?php comments_template( '', true ); ?>
 
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 		<?php cryout_after_content_hook(); ?>
-	</main><!-- #main -->
+	</main>
 
 	<?php bravada_get_sidebar(); ?>
-</div><!-- #container -->
+</div>
 <?php if ( 1 == cryout_get_option ('theme_singlenav') ) { ?>
 	<nav id="nav-below" class="navigation">
 		<?php
@@ -79,7 +79,7 @@ get_header(); ?>
 			<?php next_post_link( '%link',  '<em>' . __('Next', 'bravada') . '</em>' . '<span>%title</span>', true ); ?>
 			<?php echo $bravada_nextthumb; ?>
 		</div>
-	</nav><!-- #nav-below -->
+	</nav>
 <?php } ?>
 <?php if ( 2 == cryout_get_option( 'theme_singlenav' ) ) { ?>
 	<nav id="nav-fixed">

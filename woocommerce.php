@@ -13,12 +13,12 @@ get_header(); ?>
 				<?php woocommerce_content(); ?>
 
 				<?php cryout_after_content_hook(); ?>
-			</div><!-- .article-inner -->
-		</article><!-- #post-## -->
-		</main><!-- #main -->
+			</div>
+		</article>
+		</main>
 
 		<?php bravada_get_sidebar(); ?>
 
-	</div><!-- #container -->
+	</div>
 
 <?php get_footer();

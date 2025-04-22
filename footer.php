@@ -1,14 +1,4 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of #main and all content
- * after. Calls sidebar-footer.php for bottom widgets.
- *
- * @package Bravada
- */
 
-?>
 		<?php cryout_absolute_bottom_hook(); ?>
 
 		<aside id="colophon" <?php cryout_schema_microdata( 'sidebar' );?>>

@@ -16,12 +16,12 @@ get_header(); ?>
 				</header>
 
 				<div id="content-masonry" class="content-masonry" <?php cryout_schema_microdata( 'blog' ); ?>>
-					<?php /* Start the Loop */
+					<?php 
 					while ( have_posts() ) : the_post();
 						get_template_part( 'content/content', get_post_format() );
 					endwhile;
 					?>
-				</div><!--content-masonry-->
+				</div>
 				<?php
 
 				bravada_pagination();
@@ -36,9 +36,9 @@ get_header(); ?>
 			endif; ?>
 
 			<?php cryout_after_content_hook(); ?>
-		</main><!-- #main -->
+		</main>
 
 		<?php bravada_get_sidebar(); ?>
-	</div><!-- #primary -->
+	</div>
 
 <?php get_footer(); ?>

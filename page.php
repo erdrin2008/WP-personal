@@ -10,10 +10,10 @@ get_header(); ?>
 			<?php get_template_part( 'content/content', 'page' ); ?>
 
 			<?php cryout_after_content_hook(); ?>
-		</main><!-- #main -->
+		</main>
 
 		<?php bravada_get_sidebar(); ?>
 
-	</div><!-- #container -->
+	</div>
 
 <?php get_footer();

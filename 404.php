@@ -1,9 +1,4 @@
 <?php
-/**
- * The template for displaying 404 pages (Not Found).
- *
- * @package Bravada
- */
 
 get_header(); ?>
 
@@ -20,9 +15,9 @@ get_header(); ?>
 			<?php cryout_empty_page_hook(); ?>
 
 			<?php cryout_after_content_hook(); ?>
-		</main><!-- #main -->
+		</main>
 
 		<?php bravada_get_sidebar(); ?>
-	</div><!-- #container -->
+	</div>
 
 <?php get_footer(); ?>

@@ -15,7 +15,6 @@ get_header(); ?>
 
 						<div class="entry-meta">
 							<?php cryout_post_meta_hook();
-								// Retrieve attachment metadata.
 								$metadata = wp_get_attachment_metadata();
 								if ( $metadata ) {
 									printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><i class="icon-image icon-metas" title="%1$s"></i> <a href="%2$s">%3$s &times; %4$s </a>%5$s</span>',
@@ -27,7 +26,7 @@ get_header(); ?>
 									);
 								}
 
-								// Retrieve attachment parent post.
+								
 								if ( ! empty( $post->post_parent ) ) :  ?>
 									<span class="published-in">
 										<i class="icon-book icon-metas" title="<?php esc_attr_e( 'Published in', 'bravada' ); ?>"></i>
@@ -37,42 +36,40 @@ get_header(); ?>
 									</span>
 							<?php endif; ?>
 
-						</div><!-- .entry-meta -->
+						</div>
 					</header>
 
 					<div class="entry-content" <?php cryout_schema_microdata( 'entry-content' ); ?>>
 
 						<div class="entry-attachment">
 							<?php
-							// actual attachment
 							$image_size = apply_filters( 'bravada_attachment_size', 'large' );
 							echo wp_get_attachment_image( get_the_ID(), $image_size ) . '<br>';
 
-							// attachment caption
 							the_excerpt();
 							?>
-						</div><!-- .entry-attachment -->
+						</div>
 
 						<?php the_content(); ?>
-					</div><!-- .entry-content -->
+					</div>
 
 					<div id="nav-below" class="navigation image-navigation">
 						<div class="nav-previous"><?php previous_image_link( false, '<i class="icon-angle-left"></i>' . __( "Previous image", "bravada" ) ); ?></div>
 						<div class="nav-next"><?php next_image_link( false, __("Next image", "bravada") . '<i class="icon-angle-right"></i>' ); ?></div>
-					</div><!-- #nav-below -->
+					</div>
 
 					<footer class="entry-meta entry-utility">
 						<?php cryout_post_utility_hook(); ?>
-					</footer><!-- .entry-meta -->
+					</footer>
 
 					<?php  comments_template( '', true ); ?>
-				</div><!-- .article-inner -->
-			</article><!-- #post-## -->
+				</div>
+			</article>
 
 		<?php endwhile; ?>
 
-	</main><!-- #main -->
+	</main>
 	<?php bravada_get_sidebar(); ?>
-</div><!-- #container -->
+</div>
 
 <?php get_footer(); ?>
