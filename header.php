@@ -1,12 +1,4 @@
-<?php
-/**
- * The Header
- *
- * Displays all of the <head> section and everything up till <main>
- *
- * @package Bravada
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <?php cryout_meta_hook(); ?>

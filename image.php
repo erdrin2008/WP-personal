@@ -1,9 +1,4 @@
 <?php
-/**
- * The template for displaying attachments.
- *
- * @package Bravada
- */
 
 get_header(); ?>
 

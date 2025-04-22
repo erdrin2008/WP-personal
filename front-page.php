@@ -1,10 +1,4 @@
 <?php
-/**
- * The template for displaying the landing page/blog posts
- * The functions used here can be found in includes/landing-page.php
- *
- * @package Bravada
- */
 
 $bravada_landingpage = cryout_get_option( 'theme_landingpage' );
 

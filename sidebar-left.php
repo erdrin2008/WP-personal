@@ -1,10 +1,4 @@
-<?php
-/**
- * The Sidebar that is normally displayed on the left side (Primary).
- *
- * @package Bravada
- */
-?>
+
 
 <?php if ( is_active_sidebar( 'sidebar-2' ) || has_nav_menu( 'sidebar' ) || current_user_can( 'edit_theme_options' ) ): ?>
 <aside id="primary" class="widget-area sidey" <?php cryout_schema_microdata( 'sidebar' );?>>

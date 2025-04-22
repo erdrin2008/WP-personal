@@ -1,9 +1,4 @@
 <?php
-/**
- * The template for displaying Search results pages.
- *
- * @package Bravada
- */
 
 get_header(); ?>
 

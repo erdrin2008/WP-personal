@@ -1,10 +1,3 @@
-<?php
-/**
- * The Footer widget areas.
- *
- * @package Bravada
- */
-?>
 
 <?php
 	/* The footer widget area is triggered if any of the areas

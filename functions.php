@@ -1,12 +1,5 @@
 <?php
-/**
- * Functions file - Calls all other required files
- *
- * PLEASE DO NOT EDIT THEME FILES DIRECTLY
- * unless you are prepared to lose all changes on the next update
- *
- * @package Bravada
- */
+
 
 // theme identification and options management - do NOT edit unless you know what you are doing
 define ( "_CRYOUT_THEME_NAME", "bravada" );

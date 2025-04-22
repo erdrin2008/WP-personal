@@ -1,10 +1,3 @@
-<?php
-/**
- * The template for displaying the searchform
- *
- * @package Bravada
- */
-?>
 
 <form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label>
